@@ -3,8 +3,8 @@ import './App.css';
 import { Grid } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import deepOrange from '@material-ui/core/colors/deepOrange';
-import { MyCard } from './components/Card';
-import { Header } from './components/Header';
+import { MyCard } from './components/card';
+import { Header } from './components/header';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import Filter from './components/FilterBar';
