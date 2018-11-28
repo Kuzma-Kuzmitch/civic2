@@ -4,9 +4,11 @@ import { Grid } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import deepOrange from '@material-ui/core/colors/deepOrange';
 import { MyCard } from './components/Card';
-import Header from './components/Header';
+import { Header } from './components/Header';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
+import Filter from './components/FilterBar';
+// import { MyModal } from './components/Modal';
 import { articles } from './Data/DummyArticles';
 
 const theme = createMuiTheme({
@@ -27,8 +29,7 @@ class App extends Component {
 
   componentDidMount() {
     // Fetch cards and put them into variable this.state.cardInfo
-    this.setState({cardInfo: articles});
-
+    this.setState({cardInfo: articles})
   }
 
   // const scrollPoint = document.querySelector('.my-section').offsetTop;
@@ -41,7 +42,6 @@ class App extends Component {
   // This method iterates over and returns all cards
   renderCards() {
     // Use the Spread Operator to include entire contents of card item
-
     const cards = this.state.cardInfo.map((card, idx) =>
       <Grid key={idx} item xs style={this.state.customStyles}
       container spacing={6} >
@@ -63,6 +63,7 @@ class App extends Component {
         <Header />
         <About />
         <div className="container">
+          <Filter />
         </div>
         <Grid id="Articles" container spacing={36}>
           { this.renderCards() }
